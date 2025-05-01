@@ -1,6 +1,6 @@
-import { Image, StyleSheet, Platform, Text, View, ScrollView, Alert, TextInput } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 
-export default function HomeScreen(){
+export default function Menu(){
   return(
     <ScrollView style={styles.Rolagem}>
       <View style={styles.PaginaCentral}>
@@ -15,7 +15,7 @@ export default function HomeScreen(){
         <Text style={styles.TextoDesc}>Ao molho ou Empanado, Acompanhamentos: Arroz, Fritas</Text>
 
         <Text style={styles.TextoItem}>3 - Lasanha R$ 40</Text>
-        <Image style={styles.ImagemInicial} source={require('@/assets/images/Lasanha.jpg')}/>
+        <Image style={styles.ImagemInicial} source={require('@/assets/images/lasanha.jpg')}/>
         <Text style={styles.TextoDesc}>Bolonhesa, Frango ou Presunto e Queijo, Sem Acompanhamentos</Text>
 
         <Text style={styles.TextoItem}>4 - Frango Assado R$ 24</Text>
@@ -23,13 +23,15 @@ export default function HomeScreen(){
         <Text style={styles.TextoDesc}>Acompanhamentos: Farofa</Text>
 
         <Text style={styles.TextoItem}>5 - Risoto R$ 45</Text>
-        <Image style={styles.ImagemInicial} source={require('@/assets/images/Risoto.jpg')}/>
+        <Image style={styles.ImagemInicial} source={require('@/assets/images/risoto.jpg')}/>
         <Text style={styles.TextoDesc}>Carne ou Camarão, Sem Acompanhamentos</Text>
 
-        <Text style={styles.TextoDrinks}>Bebidas</Text>
-        <Text style={styles.TextoDrinks}>1 - Refrigerante R$ 7</Text>
-        <Text style={styles.TextoDrinks}>2 - Suco R$ 5</Text>
-        <Text style={styles.TextoDrinks}>3 - Agua R$ 2</Text>
+        <View style={styles.QuadroAzul}>
+          <Text style={styles.TextoDrinks}>Bebidas</Text>
+          <Text style={styles.TextoDrinks}>1 - Refrigerante R$ 7</Text>
+          <Text style={styles.TextoDrinks}>2 - Suco R$ 5</Text>
+          <Text style={styles.TextoDrinks}>3 - Agua R$ 2</Text>
+        </View>
       </View>
     </ScrollView>
 
@@ -46,38 +48,52 @@ const styles = StyleSheet.create({
     padding: 32,
     justifyContent: 'center',
     alignContent: 'center',
-    backgroundColor: '#FFFFE0'
+    backgroundColor: '#ffd33d'
   },
   TextoCentral: {
     textAlign: 'center',
     color: '#8B0000',
     fontSize: 30,
     fontWeight: "bold",
-    marginTop: 20,
-    marginBottom: 10
+    marginTop: 1,
+    marginBottom: 25
   },
   TextoItem: {
     textAlign: 'auto',
-    color: '#800000',
+    color: '#8B0000',
     fontSize: 20,
     fontWeight: "bold",
-    marginTop: 10,
-    marginBottom: 1
+    marginTop: 1,
+    marginBottom: 10
   },
   TextoDesc: {
     fontSize: 15,
     textAlign: 'justify',
     fontStyle: "normal",
-    marginBottom: 10
+    marginBottom: 10,
+    marginTop: 1
   },
   TextoDrinks:{
     fontSize: 18,
     color: "#4B0082",
-    fontWeight: "bold"
+    fontWeight: "bold",
+    gap: 0,
+    textAlign: 'center'
   },
   ImagemInicial: {
-    width: 250,
-    height: 200,
+    width: 200,
+    height: 150,
     resizeMode: 'contain',
+    marginBottom: 1,
+    marginTop: 1
+  },
+  QuadroAzul: {
+    gap: 7,
+    borderColor:'#4B0082',
+    borderWidth: 2,
+    borderRadius: 12,
+    backgroundColor: '#E0FFFF',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 });
